@@ -1,0 +1,16 @@
+body {
+  width: 960px;
+  margin: auto;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  border: solid black;
+  width: 960px;
+  height: 960px;
+}
+
+.square {
+  border: 1px solid lightgrey;
+}
