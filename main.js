@@ -1,7 +1,8 @@
 const randomColor = () => '#'+Math.floor(Math.random()*16777215).toString(16);
 
-const init = (size) => {
+const reset = (size) => {
   const grid = document.querySelector('.grid');
+  grid.innerHTML = ''; // purge grid contents
   grid.style.gridTemplateColumns = `repeat(${size}, ${1/size*100}%)`
 
   for (let i = 0; i < size**2; i++) {
@@ -21,9 +22,17 @@ const init = (size) => {
   });
 }
 
-const reset = () => {
+const setSize = () => {
   const size = prompt("Size: ");
-  init(size);
+  reset(size);
 }
 
-reset();
+const purge = () => {
+  const squares = document.querySelectorAll('.square');
+
+  squares.forEach((square) => {
+    square.style.backgroundColor = "white";
+  });
+}
+
+setSize();
